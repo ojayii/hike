@@ -114,11 +114,11 @@ main {
     margin: 0 auto 1rem auto;
 
     max-width: 63%;
+}
 
-    & img {
-        width: 1.5rem;
-        filter: invert(1);
-    }
+.header>a img {
+    width: 1.5rem;
+    filter: invert(1);
 }
 
 .image-wrapper {
@@ -229,15 +229,15 @@ main {
 
     span.nav_toggle {
         z-index: 5;
-        padding: 0.6rem;
+        padding: 0.7rem;
         background-color: black;
         border-radius: 12px;
     }
 
     span.nav_toggle>span {
         display: block;
-        height: 20.8px;
-        width: 20.8px;
+        height: 17.6px;
+        width: 17.6px;
         background: url(./images/iconMenu.svg);
         background-size: contain;
         background-repeat: no-repeat;
