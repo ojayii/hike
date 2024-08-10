@@ -48,7 +48,7 @@ img {
 }
 
 .navbar__links a {
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .navbar__links>li:nth-child(6) {
@@ -94,7 +94,6 @@ img {
 .header {
     text-align: center;
     position: relative;
-
     margin-inline: auto;
     /* margin-bottom: -18.4rem; */
     transform: translateY(17.4rem);
