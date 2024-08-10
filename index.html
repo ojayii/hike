@@ -13,61 +13,79 @@
     <nav class="navbar">
         <input type="checkbox" name="" id="" class="nav_toggle">
         <span class="nav_toggle"><span></span></span>
-        <a href="" class="navbar__logo">HIKE.COM</a>
+        <a href="#" class="navbar__logo">HIKE.COM</a>
         <ul class="navbar__links">
             <li>
-                <a href="">About us</a>
+                <a href="#">About us</a>
             </li>
             <li>
-                <a href="">Trails</a>
+                <a href="#">Trails</a>
             </li>
             <li>
-                <a href="">Guides</a>
+                <a href="#">Guides</a>
             </li>
             <li>
-                <a href="">Community</a>
+                <a href="#">Community</a>
             </li>
             <li>
-                <a href="">Blog</a>
+                <a href="#">Blog</a>
             </li>
             <li>
-                <a href="">Login</a>
+                <a href="#">Login</a>
             </li>
             <li>
-                <a href="">Get started</a>
+                <a href="#">Get started</a>
             </li>
-            <!-- <button class="navbar__links__toggle-btn"><span/></button> -->
         </ul>
     </nav>
     <main>
-        <div class="header">
-            <h1>Hike, Explore, Discover</h1>
-            <p>Join Our Community Of Hikers and Find the Perfect Trail for You. Get expert advice, detailed trail
-                guides, and support from fellow adventurers at every step.
-            </p>
-            <a href="">
-                <span>Join our community</span>
+        <div class="container">
+            <div class="header">
+                <h1>Hike, Explore, Discover</h1>
+                <p>Join Our Community Of Hikers and Find the Perfect Trail for You. Get expert advice, detailed trail
+                    guides, and support from fellow adventurers at every step.
+                </p>
+                <a href="#">
+                    <span>Join our community</span>
+                    <img src="./images/compass.png" alt="">
+                </a>
+                <img src="./images/binoculars.png" alt="">
                 <img src="./images/compass.png" alt="">
-            </a>
-            <img src="./images/binoculars.png" alt="">
-            <img src="./images/compass.png" alt="">
-            <img src="./images/search.png" alt="">
-        </div>
-        <div class="image-wrapper">
-            <img src="./images/bg-img.jpg" alt="">
-        </div>
+                <img src="./images/search.png" alt="">
+            </div>
+            <div class="image-wrapper">
+                <img src="./images/bg-img.jpg" alt="">
+            </div>
 
-        <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg"
-            version="1.1">
-            <defs>
-                <filter id="goo">
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                        result="goo" />
-                    <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                </filter>
-            </defs>
-        </svg>
+            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg"
+                version="1.1">
+                <defs>
+                    <filter id="goo-desktop">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                            result="goo" />
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                    </filter>
+                    <filter id="goo-mobile">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                            result="goo" />
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                    </filter>
+                </defs>
+            </svg>
+
+            <div class="users">
+                <div>
+                    <img src="./images/profie1.jpg" alt="">
+                    <img src="./images/profie1.jpg" alt="">
+                    <img src="./images/profie1.jpg" alt="">
+                    <img src="./images/profie1.jpg" alt="">
+                </div>
+                <span><strong>10k+</strong> registered users</span>
+            </div>
+
+        </div>
     </main>
 </body>
 

@@ -2,12 +2,21 @@ body,
 html {
     font-size: 100%;
     min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+main {
+    overflow: hidden;
 }
 
 img {
@@ -25,6 +34,11 @@ img {
 .navbar a {
     text-decoration: none;
     color: black;
+}
+
+.navbar__logo {
+    font-size: clamp(1.2rem, 2.2vw, 2rem);
+    font-weight: 700;
 }
 
 .navbar__links {
@@ -56,10 +70,11 @@ img {
 }
 
 .navbar__links>li:nth-child(7)>a:hover {
-    filter: brightness(1.3);
+    transform: scale(1.05);
+    transition: transform 150ms ease-in-out;
 }
 
-.navbar__links>li:nth-child(-n + 5)>a:hover {
+.navbar__links>li:nth-child(-n + 6)>a:hover {
     text-decoration: underline;
 }
 
@@ -67,9 +82,13 @@ img {
     display: none;
 }
 
-main {
+.container {
     width: 100%;
+    max-width: 100rem;
+    margin-inline: auto;
     padding: 3rem 3% 0 3%;
+    position: relative;
+    transform: translateY(clamp(-16.7rem, -19.3vw, -17.4rem));
 }
 
 .header {
@@ -77,32 +96,49 @@ main {
     position: relative;
 
     margin-inline: auto;
-    margin-bottom: -18rem;
+    /* margin-bottom: -18.4rem; */
+    transform: translateY(17.4rem);
 }
 
 .header>img {
     width: 2.5rem;
     height: auto;
     position: absolute;
-    display: none;
+}
+
+.header>img:nth-of-type(1) {
+    top: 0;
+    left: 21%;
+}
+
+.header>img:nth-of-type(2) {
+    top: -1rem;
+    right: 23%;
+}
+
+.header>img:nth-of-type(3) {
+    top: 85%;
+    left: 64%;
 }
 
 .header>h1 {
-    font-size: clamp(1.8rem, 4vw, 3.3rem);
-    margin-bottom: clamp(1rem, 4vw, 1.5rem);
-    width: 100%;
+    font-size: clamp(1.8rem, 8vw, 3.3rem);
+    margin-bottom: clamp(1rem, 6vw, 1.5rem);
+    width: 62%;
+    margin-inline: auto;
+    background: #213764;
+    background: linear-gradient(to right, #213764 0%, #7A2040 34%, #F08C1A 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .header>p {
     font-size: clamp(1rem, 1.3vw, 1.2rem);
     margin-bottom: clamp(1rem, 3vw, 2rem);
     line-height: 1.3;
-
     width: 500px;
-    max-width: 50%;
-
-
-    /* width: 75%; */ 
+    max-width: 48%;
     margin-inline: auto;
 }
 
@@ -110,7 +146,7 @@ main {
     text-decoration: none;
     color: white;
     background-color: black;
-    padding: 12px 15px;
+    padding: 12px 24px;
     border-radius: 50px;
     width: max-content;
     display: flex;
@@ -118,63 +154,109 @@ main {
     align-items: center;
     gap: clamp(5px, 1vw, 1rem);
     margin: 0 auto 1rem auto;
-
     max-width: 63%;
 }
 
 .header>a img {
-    width: 1.5rem;
+    width: 1rem;
     filter: invert(1);
 }
 
 .image-wrapper {
     position: relative;
     width: 100%;
-    /* max-width: 90rem; */
-    filter: url('#goo');
+    filter: url('#goo-desktop');
     overflow: hidden;
     height: 700px;
-
-    padding-bottom: 2rem;
 }
 
 .image-wrapper>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* clp-path: polygon(0 0, 0 88%, 25% 88%, 25% 100%, 75% 100%, 75% 88%, 100% 88%, 100% 0, 86% 0, 86% 9%, 79% 10%, 80% 22%, 72% 22%, 72% 39%, 31% 39%, 30% 28%, 23% 28%, 23% 15%, 16% 16%, 16% 0); */
+    /* clp-path: polygon(0 0, 0 88%, 25% 88%, 25% 100%, 75% 100%, 75% 88%, 100% 88%, 100% 0, 89% 0%, 87% 9%, 77% 9%, 71% 18%, 64% 18%, 66% 28%, 34% 28%, 32% 19%, 27% 17%, 25% 11%, 19% 10%, 17% 0%); */
+    /* clip-path: polygon(0 0, 0 88%, 25% 88%, 25% 100%, 75% 100%, 75% 88%, 100% 88%, 100% 0, 84% 0, 84% 15%, 77% 15%, 77% 30%, 70% 30%, 70% 45%, 30% 45%, 30% 30%, 23% 30%, 23% 15%, 16% 15%, 16% 0); */
+    /* clp-path: polygon(0 4%, 0 88%, 25% 88%, 25% 100%, 75% 100%, 75% 88%, 100% 88%, 100% 4%, 84% 4%, 84% 15%, 77% 15%, 77% 30%, 70% 30%, 70% 45%, 30% 45%, 30% 30%, 23% 30%, 23% 15%, 16% 15%, 16% 4%); */
+    clip-path: polygon(0 0, 0 88%, 25% 88%, 25% 100%, 75% 100%, 75% 88%, 100% 88%, 100% 0, 82% 0, 82% 15%, 75% 15%, 75% 30%, 70% 30%, 70% 45%, 30% 45%, 30% 30%, 25% 30%, 25% 15%, 18% 15%, 18% 0);
+}
 
+.users {
+    display: flex;
+    gap: 2%;
+    align-items: center;
+    position: absolute;
+    bottom: clamp(0.2rem, 1.1vw, 1rem);
+    left: 3vw;
+    font-size: ;
+    width: 23%;
+    flex-flow: row wrap;
+}
 
+.users img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+}
 
-    clp-path: polygon(0 0, 0 88%, 25% 88%, 25% 100%, 75% 100%, 75% 88%, 100% 88%, 100% 0, 86% 0, 86% 9%, 79% 10%, 80% 22%, 72% 22%, 72% 39%, 31% 39%, 30% 28%, 23% 28%, 23% 15%, 16% 16%, 16% 0);
-    clp-path: polygon(0 0, 0 88%, 25% 88%, 25% 100%, 75% 100%, 75% 88%, 100% 88%, 100% 0, 89% 0%, 87% 9%, 77% 9%, 71% 18%, 64% 18%, 66% 28%, 34% 28%, 32% 19%, 27% 17%, 25% 11%, 19% 10%, 17% 0%);
-
-    clip-path: polygon(0 0, 0 88%, 25% 88%, 25% 100%, 75% 100%, 75% 88%, 100% 88%, 100% 0, 84% 0, 84% 15%, 77% 15%, 77% 30%, 70% 30%, 70% 45%, 30% 45%, 30% 30%, 23% 30%, 23% 15%, 16% 15%, 16% 0);
-
-    clp-path: polygon(0 4%, 0 88%, 25% 88%, 25% 100%, 75% 100%, 75% 88%, 100% 88%, 100% 4%, 84% 4%, 84% 15%, 77% 15%, 77% 30%, 70% 30%, 70% 45%, 30% 45%, 30% 30%, 23% 30%, 23% 15%, 16% 15%, 16% 4%);
+.users img:not(.users img:nth-of-type(1)) {
+    margin-left: -1.3rem;
 }
 
 
 
 @media (max-width: 48em) {
 
-    main {
-        padding-inline: 5%;
+    .users {
+        width: 66%;
+        left: 17%;
+    }
+
+    .users img:not(.users img:nth-of-type(1)) {
+        margin-left: -2.6rem;
+    }
+
+
+
+    .container {
+        padding: 0 5% 2rem 5%;
+        transform: none;
+        max-width: 45rem;
     }
 
     .header {
-        margin-bottom: -11.8rem;
+        margin-bottom: -10.8rem;
+        transform: none;
+    }
+
+    .header>h1 {
+        font-size: clamp(1.8rem, 6vw, 3.3rem);
+        width: 100%;
     }
 
     .header>p {
         max-width: 75%;
     }
 
+    .header>a {
+        padding-block: 15px;
+    }
+
+    .header>img {
+        display: none;
+    }
+
     .image-wrapper {
-        height: 500px;
+        height: 600px;
+        filter: url('#goo-mobile');
     }
 
     .image-wrapper>img {
-        clip-path: polygon(0 0, 0% 100%, 11% 100%, 9% 93%, 91% 93%, 89% 100%, 100% 100%, 100% 0, 92% 0, 92% 20%, 84% 20%, 84% 40%, 16% 40%, 16% 20%, 8% 20%, 8% 0);
+        /* clip-path: polygon(0 0, 0% 100%, 11% 100%, 9% 93%, 91% 93%, 89% 100%, 100% 100%, 100% 0, 92% 0, 92% 20%, 84% 20%, 84% 40%, 16% 40%, 16% 20%, 8% 20%, 8% 0); */
+        /* clip-path: polygon(0 0, 0% 100%, 11% 100%, 9% 93%, 91% 93%, 89% 100%, 100% 100%, 100% 0, 92% 0, 92% 15%, 84% 15%, 84% 30%, 16% 30%, 16% 15%, 8% 15%, 8% 0); */
+        clip-path: polygon(0 0, 0% 100%, 9% 100%, 9% 93%, 91% 93%, 91% 100%, 100% 100%, 100% 0, 92% 0, 92% 15%, 84% 15%, 84% 30%, 16% 30%, 16% 15%, 8% 15%, 8% 0);
     }
 
     .navbar {
@@ -211,7 +293,7 @@ main {
 
     .navbar__links>li>a {
         width: 100%;
-        padding-block: 0.5rem;
+        padding-block: 0.6rem;
         display: block;
     }
 
@@ -235,10 +317,9 @@ main {
         display: block;
         position: absolute;
         right: 5%;
-        top: 1rem;
+        top: 1.57rem;
         width: 2.5rem;
         height: 2.5rem;
-        /* filter: invert(1); */
     }
 
     input.nav_toggle {
@@ -280,8 +361,6 @@ main {
         background: url(./images/iconCloseMenu.svg);
         background-size: contain;
         background-repeat: no-repeat;
-        /* position: fixed; */
-
     }
 
     input.nav_toggle:checked~.navbar__links {
@@ -291,12 +370,7 @@ main {
 
     @keyframes nav-slide {
         0% {
-            /* display: flex; */
             left: 100vw;
-        }
-
-        10% {
-            /* left: 100vw; */
         }
 
         60% {
